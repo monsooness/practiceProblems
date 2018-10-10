@@ -1,3 +1,5 @@
+// My solution: https://jsfiddle.net/69z2wepo/311152/
+
 // Redux-specific coding challenge
 
 // Problem: 
@@ -21,7 +23,7 @@
 <div id="app"></div>
 
 //Babel + JSX + Pure JS
-//Included resourced: react.development, react-dom.development, redux.min
+//Included resources: react.development, react-dom.development, redux.min
 
 
 const questions = [{
