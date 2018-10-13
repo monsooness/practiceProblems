@@ -1,3 +1,5 @@
+//Given an array and a target, find two elements in the array that sum up to the target 
+
 function twoSum(arr, num) {
   let obj = {};
   let ans = [];

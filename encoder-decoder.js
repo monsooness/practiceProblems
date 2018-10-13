@@ -1,12 +1,12 @@
 //encoding
 
-//Input: aaabbbbbcccaa
-//Output: a3b5c2a2 // encoding
+  //Input: aaabbbbbcccaa
+  //Output: a3b5c2a2 // encoding
 
 //decoding
 
-//Input: a6b11
-//Output: aaaaaabbbbbbbbbbb
+  //Input: a6b11
+  //Output: aaaaaabbbbbbbbbbb
 
 function encoder(str) {
   let arr = [];
@@ -29,11 +29,11 @@ function encoder(str) {
 
  function decoder(str) {
   let nums = ['1','2','3','4','5','6','7','8','9','0']
-  let result = ''
-  let letter = ''
+  let result = '';
+  let letter = '';
  
   for (var i=0; i<str.length; i++) {
-    var numbers = ''
+    var numbers = '';
     if (nums.includes(str[i])) {
     
       while(i<str.length && nums.includes(str[i])) {
@@ -46,9 +46,8 @@ function encoder(str) {
       }
     } else {
       letter = str[i]
-      console.log(letter)
     }
 
   }
-  console.log(result)
+  return result
 }
