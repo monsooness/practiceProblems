@@ -33,3 +33,28 @@ var entry = 1
 }
 
 winding(4,5)
+
+//Another way of doing it
+
+
+function winding(y,x) {
+  let ans = []
+  let count = 1;
+
+  for (var i=1; i<=x; i++) {
+    let temp = [];
+    for (var j=1; j<=y; j++) {
+      temp.push(count)
+      count++
+    }
+    if (i%2 === 0) {
+      ans.push( temp.reverse())
+    } else {
+      ans.push(temp)
+    }
+  }
+  console.log(ans)
+}
+
+
+winding(4,5)
