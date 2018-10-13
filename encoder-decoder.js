@@ -8,22 +8,21 @@
   //Input: a6b11
   //Output: aaaaaabbbbbbbbbbb
 
-function encoder(str) {
-  let arr = [];
-  let count = 1;
- 
-  for (var i=0; i<str.length-1; i++) {
-    if (str[i] === str[i+1]) {
-      count ++
-      
-    } else {
-      arr.push(str[i-1],count)
-      count = 1
+  function encoder(str) {
+
+    let count = 1;
+    let result = [];
+  
+    for (let i=0; i<str.length; i++) {
+      if (str[i] === str[i+1]) {
+        count ++
+      } else {
+        result.push(str[i], count)
+        count = 1;
+      }
     }
+    return result;
   }
-   arr.push(str[str.length-1],count)
-  return arr;
- }
 
 
 
