@@ -4,7 +4,9 @@ function commonElm(arr1, arr2) {
   let x = 0;
   let y = 0;
   let output = [];
-
+  
+  //the greedy way
+  
   while (x<arr1.length || y<arr2.length) {
     if (arr1[x] === arr2[y]) {
       output.push(arr1[x])
