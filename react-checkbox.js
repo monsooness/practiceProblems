@@ -1,3 +1,6 @@
+//https://jsfiddle.net/69z2wepo/314883/
+
+
 // Assume that you have a table with a list of many items where each row has a checkbox. You also have a checkbox above the table labeled as "Check All".
 
 // We want the following behavior:
@@ -13,9 +16,8 @@
 //    List item B
 //    List item C
 
-// Can you implement the checkbox behavior explained for those checkboxes?
-
 //html
+
 
 <div id="container">
     <!-- This element's contents will be replaced with your component. -->
