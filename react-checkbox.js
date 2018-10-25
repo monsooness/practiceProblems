@@ -1,4 +1,4 @@
-//https://jsfiddle.net/69z2wepo/314883/
+//https://jsfiddle.net/69z2wepo/315466/
 
 
 // Assume that you have a table with a list of many items where each row has a checkbox. You also have a checkbox above the table labeled as "Check All".
@@ -19,9 +19,7 @@
 //html
 
 
-<div id="container">
-    <!-- This element's contents will be replaced with your component. -->
-</div>
+<div id="container"></div>
 
 
 //JSX
@@ -29,18 +27,16 @@
 class CheckBox extends React.Component {
   
   selectAll() {
-    this.refs.one.checked = true;
-    this.refs.two.checked = true;
-    this.refs.three.checked = true;
-    this.refs.unSelect.checked = false;
+    this.refs.one.checked = !this.refs.one.checked;
+    this.refs.two.checked = !this.refs.two.checked;
+    this.refs.three.checked = !this.refs.three.checked;
+    this.refs.all.checked = undefined;
+    
+    if (this.refs.one.checked == true && this.refs.two.checked  == true && this.refs.three.checked == true) {
+      this.refs.all.checked = true
+    }
   }
   
-  unSelectAll() {
-    this.refs.one.checked = false;
-    this.refs.two.checked = false;
-    this.refs.three.checked = false;
-    this.refs.all.checked = false;
-  }
   
   render() {
     return (  
@@ -50,10 +46,8 @@ class CheckBox extends React.Component {
         <input type="checkbox" ref='two' /> Item Two <br />
         <input type="checkbox" ref='three' /> Item Three <br />
         <br />
-        <input type="checkbox" ref='all' onClick={this.selectAll.bind(this)} />               Select All
-        <input type="checkbox" ref='unSelect' onClick={this.unSelectAll.bind(this)} /> Unselect All
-        
-        
+        <input type="checkbox" ref='all' onClick={this.selectAll.bind(this)} /> 
+          Select All
       </div>)
   }
 }
@@ -62,4 +56,3 @@ ReactDOM.render(
   <CheckBox />,
   document.getElementById('container')
 );
-
