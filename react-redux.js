@@ -151,7 +151,6 @@ const questions = [{
       });
     } 
     
-    //Not sure why, but just one <br> was giving issues on jsFiddle but <br></br> worked so leaving it that way 
     
     render() {
       return ( 
