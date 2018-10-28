@@ -24,3 +24,21 @@ var productExceptSelf = function(arr) {
 
     return newArr
 };
+
+
+var productExceptSelf = function(nums) {
+  var output = [];
+  var l = 1;
+  var r = 1;
+  
+  for(var i = 0; i < nums.length; output[i++] = 1);
+  for(var i = 0, j = nums.length-1; i < nums.length; i++, j--) {        
+      output[i] *= l;        
+      output[j] *= r;
+      l *= nums[i];
+      r *= nums[j];
+      console.log(output, l, r)
+  }
+  
+  return output;
+};
