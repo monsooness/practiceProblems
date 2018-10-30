@@ -20,3 +20,19 @@ function permute(input) {
   }
 };
 
+function permute(nums) {
+  let res = [];
+
+  function find(curr, rest) {
+    if (!rest.length) return res.push(curr);
+
+    for (let i = 0; i < rest.length; i++) {
+      find(
+      [...curr, rest[i]],[...rest.slice(0, i), ...rest.slice(i + 1)]);
+    }
+  }
+
+  find([], nums);
+
+  return res;
+}
