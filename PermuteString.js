@@ -1,19 +1,23 @@
-var permute = function(nums) {
-  let results = [];
+//Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+
+function permutator (arr) {
+    var permutations = [];
+    if (arr.length === 1) {
+      return [ arr ];
+    }
   
-  if (nums.length === 1) {
-      results.push(nums)
-      return results
-  }
-  
-  for (let i=0; i<nums.length; i++) {
-      let first = nums[i];
-      let left = nums.slice(0,i) + nums.slice(i+1)
-      let innerPermutation = permute(left)
-      
-      for (let j=0; j<innerPermutation.length; j++) {
-          results.push(first + innerPermutation[j])
+    for (var i = 0; i <  arr.length; i++) { 
+      let first = arr[i]
+      var subPerms = permutator(arr.slice(0, i).concat(arr.slice(i + 1)));
+      for (var j = 0; j < subPerms.length; j++) {
+        temp = (first + subPerms[j])
+        if (!permutations.includes(temp)) {
+          permutations.push(temp)
+        }
       }
+    }
+    return permutations;
   }
-  return results
-};
+  
+
+  //O(n^2)
