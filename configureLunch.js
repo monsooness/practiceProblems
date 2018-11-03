@@ -9,10 +9,6 @@
 
 // Output: a list of maps of group of four coworkers -> shared day, for all possible groups. (If a group has multiple shared days, just return one of them.)
 
-// Solution: Either:
-//  * Do a quadruple nested for loop. Make sure they check for the case where the number of people is < 4.
-//  * Turn the map of users -> days into a list of days -> users, then use a permutations library to get all permutations of users for each day.
-
 // Part 2: Now, suppose you want all your coworkers to have lunch together every week. How would you go about writing code that will group all your coworkers into quartets? What challenges will you face?
 
 let info = {
@@ -28,9 +24,8 @@ let info = {
 'user10': ['Wednesday', 'Thursday']
 }
 
+//Part 1)
 
-
-Part 1)
 function configureLunch(obj) {
  if (obj.length < 4) {
    return 'Work hard till you need more than 4 co-workers'
@@ -38,11 +33,10 @@ function configureLunch(obj) {
   let week = {}
  for (let item in obj) {
    for (let day in obj[item]) {
-     let temp = []
      week[obj[item][day]] = []
    }
  }
-  let temp = [];
+ let temp = [];
  let count = 0;
  for (let day in week) {
    for (let user in info) {
