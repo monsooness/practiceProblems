@@ -8,31 +8,27 @@
 // Question #1: Is it possible to form string A in this way?
 // Question #2: If possible, what is the minimum copies of B required?
 
+
 function formA(a,b) {
   let result = [];
   
-  for (let j=0; j<a.length; j++) {
-    let temp = '';
-    for (let i=0; i<b.length; i++) {
-      if (b[i] !== a[j]) {
-        temp += '#'
-      } else if (b[i] === a[j]) {
-        temp += b[i]
-        while(b[i+1] === a[j+1] && b<b.length ) {
-          temp += b[i+1]
-          i++;
-          j++;
-        }
-      } 
-    }
-    result.push(temp)
-  }
-  
-  if (result.every( (val, i, arr) =>  val === arr[0])) {
-    return 'Cant form string A'
-  } else {
-    return result
-  }
+   for (let j=0; j<a.length; j++) {
+   let temp = ''
+   for (let i=0; i<b.length; i++) {
+     if (b[i] !== a[j]) {
+       temp += '#'
+     } else if (b[i] === a[j]) {
+       temp += b[i]
+       while(b[i+1] === a[j+1] ) {
+         temp += b[i+1]
+         i++
+         j++
+       }
+     }
+   }
+   result.push(temp)
+ }
+ return result
 }
 
-formA('ZAZA','ZAZ')
+formA('ZAZA','BAZ')
