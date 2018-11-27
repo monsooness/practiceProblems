@@ -11,7 +11,7 @@ function ListNode(val) {
 }
 
 var addTwoNumbers = function(l1, l2) {
-  var List = new ListNod2(0)
+  var List = new ListNode(0)
   let head = List
   let sum = 0;
   let carry = 0;
