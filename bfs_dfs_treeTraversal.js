@@ -19,7 +19,7 @@ class Node {
   }
 }
 
-traverseDF(value) {
+traverseDF = (value) => {
   let collection = [this.root]
 
   while (collection.length) {
@@ -34,7 +34,7 @@ traverseDF(value) {
   return false
 }
 
-traverseBF(value) {
+traverseBF = (value) => {
   let collection = [this.root]
 
   while(collection.length) {
