@@ -19,29 +19,16 @@
 
 
 function greatestNumber(root, number) {
-
-    let min = -1
-   
-    if (root.val === null) {
-   
-      return min
-   
-    } else if (root.val === number) {
-   
-      return number
-   
-    } else if (root.val < number && root.val > min) {
-   
-      min = greatestNumber(root.left, number)
-   
-    } else if (root.val > num && root.val > min ) {
-   
-      min = greatestNumber(root.right, number)
-   
-    }
-   
-    return min
-   
-   }
+  if (root.val === null) {
+    return -1
+  } else if (root.val === number) {
+    return number
+  } else if (root.val > number) {
+    return greatestNumber(root.left, number)
+  } else if (root.val < num ) {
+    return Math.max(greatestNumber(root.right, number), root.val)
+  }
+}
+  
    
    
