@@ -18,17 +18,44 @@
 // Output: 3
 
 
-function greatestNumber(root, number) {
-  if (root.val === null) {
-    return -1
-  } else if (root.val === number) {
-    return number
-  } else if (root.val > number) {
-    return greatestNumber(root.left, number)
-  } else if (root.val < num ) {
-    return Math.max(greatestNumber(root.right, number), root.val)
+class BinaryTreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left = this.right = null;
+  }
+
+  insertLeft(value) {
+    this.left = new BinaryTreeNode(value);
+    return this.left
+  }
+
+  insertRight(value) {
+    this.right = new BinaryTreeNode(value);
+    return this.right
   }
 }
+
+function smallerOrEqual(root, number) {
+ if (root === null) {
+    return -1
+  } else if (root.value === number) {
+    return number
+  } else if (root.value > number) {
+    return smallerOrEqual(root.left, number)
+  } else if (root.value < number ) {
+    return Math.max(smallerOrEqual(root.right, number), root.value)
+  }
+}
+
+let treeRoot = new BinaryTreeNode(100);
+let l1 = treeRoot.insertLeft(90);
+let r1 = treeRoot.insertRight(111)
+l1.insertLeft(80)
+l1.insertRight(105)
+r1.insertLeft(107)
+r1.insertRight(115)
+
+smallerOrEqual(treeRoot, 113)
   
    
    
