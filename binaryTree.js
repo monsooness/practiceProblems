@@ -36,6 +36,22 @@ class BinaryTreeNode {
   }
 
 
+  function secondLargest(rootNode) {
+    let current = rootNode;
+    while(current) {
+      if (current.value === null || (!current.left && !current.right)) {
+        throw new Error('Tree must have more than 2 nodes')
+      }
+      if (!current.right && current.left) {
+        return current.value
+      } else if (current.right && !current.right.left && !current.right.right) {
+        return current.value
+      }
+      current = current.right
+    }
+  }
+  
+
   
   let treeRoot = new BinaryTreeNode(100);
   let l1 = treeRoot.insertLeft(90);
