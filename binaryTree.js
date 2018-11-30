@@ -24,7 +24,17 @@ class BinaryTreeNode {
       current = current.right;
     }
   }
-  
+
+  function findSmallest(rootNode) {
+    let current = rootNode
+    while (current) {
+      if (!current.left) {
+        return current.value
+      }
+      current = current.left
+    }
+  }
+
 
   
   let treeRoot = new BinaryTreeNode(100);
