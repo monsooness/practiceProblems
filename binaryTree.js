@@ -52,6 +52,66 @@ class BinaryTreeNode {
   }
   
 
+  function inOrder(rootNode) {
+    //left, root, right
+    let result = [];
+  
+    function traverse(node) {
+      if (node.value !== null) {
+        if (node.right) {
+          traverse(node.right)
+        }
+        result.push(node.value)
+        if (node.left) {
+          traverse(node.left)
+        }
+      } else {
+        return 
+      }
+    }
+  }
+  
+  function preOrder(rootNode) {
+    //root, left, right
+    let results = []
+    function traverse(node) {
+      if (node.value !== null) {
+        results.push(node.value)
+        if (node.left) {
+          traverse(node.left)
+        }
+        if (node.right) {
+          traverse(node.right)
+        }
+      } else {
+        return 
+      }
+    }
+    traverse(rootNode)
+    return results
+  }
+  
+  function postOrder(rootnode) {
+    //left, right, root
+    let results = [];
+    function traverse(node) {
+      if (node.value !== null) {
+        if(node.left) {
+          traverse(node.left)
+        } 
+        if (node.right) {
+          traverse(node.right)
+        }
+        results.push(node.value)
+      } else {
+        return 
+      }
+    }
+    traverse(rootnode)
+    return results;
+  }
+  
+
   
   let treeRoot = new BinaryTreeNode(100);
   let l1 = treeRoot.insertLeft(90);
