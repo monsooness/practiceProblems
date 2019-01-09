@@ -42,3 +42,20 @@ var productExceptSelf = function(nums) {
   
   return output;
 };
+
+//easiest to understand implementation
+
+function productExceptSelf(arr) {
+  let result = [];
+
+  for (let i=0; i<arr.length; i++) {
+    let temp = arr[i]
+    arr[i] = 1
+    let product = arr.reduce( (x,y) => x*y)
+    result.push(product)
+    arr[i] = temp
+  }
+  return result
+}
+
+productExceptSelf([1,2,3,4])
