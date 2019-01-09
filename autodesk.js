@@ -1,32 +1,27 @@
-// write a React component to add a character to a starting every second.
+// write a React component that displays and updates date and time
 
-class TimeDisplay extends React.Component {
-  constructor(props) { 
-     
-     super(props) 
-     this.state = {randomChar: 'abc'}
-     
+class DisplayTime extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timeNow: new Date().toLocaleString()
+    }
   }
   
-  changeChar() {
-    let currentChar = this.state.randomChar
-    let newChar = currentChar + '1'
-    this.setState({randomChar: newChar})
+  updateTime() {
+    let date = new Date().toLocaleString()
+    this.setState({timeNow: date})
   }
   
   componentDidMount() {
-  //  let changeCharFunc = this.changeChar()
-    setInterval( () => this.changeChar(), 1000)
+    setInterval( () => this.updateTime(), 1000)
   }
- 
-  render() {
 
-    return (
-      <div>
-        {this.state.randomChar}
-      </div>
-    )
+  render() {
+    return( <div>
+      {this.state.timeNow}
+    </div>)
   }
 }
 
-ReactDOM.render( <TimeDisplay />, document.getElementById('app'))
+ReactDOM.render(<DisplayTime />, document.getElementById('app'))
